@@ -9,7 +9,6 @@ def keep_door(rounds):
         v = doors[0]
         if v == 1:
             win_count += 1
-            continue
     return win_count
 
 
@@ -18,15 +17,11 @@ def switch_and_keep(rounds):
     for x in range(rounds):
         doors = [0, 0, 1]
         random.shuffle(doors)
-        v = doors[0]
-        if v == 0:
-            doors.pop()
-            x = random.choice(doors)
-            if x == 0:
-                win_count += 1
-                continue
-        else:
-            continue
+        switch = random.randint(0, 1)
+        if switch and doors[0] == 0:
+            win_count += 1
+        elif not switch and doors[0] == 1:
+            win_count += 1
     return win_count
 
 
@@ -35,15 +30,8 @@ def switch_door(rounds):
     for x in range(rounds):
         doors = [0, 0, 1]
         random.shuffle(doors)
-        v = doors[0]
-        if v == 0:
-            doors.pop()
-            x = doors[0]
-            if x == 0:
-                win_count += 1
-                continue
-        else:
-            continue
+        if doors[0] == 0:
+            win_count += 1
     return win_count
 
 

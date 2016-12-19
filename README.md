@@ -8,5 +8,5 @@ a dud.
 
 When starting this program, you will be prompted for how many times you want
 the scenario to run.  Higher rounds will showcase win percentage, though numbers
-too large will cause the program to retun input only after a long period of
+too large will cause the program to return input only after a long period of
 time.
